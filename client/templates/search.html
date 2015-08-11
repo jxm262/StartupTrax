@@ -1,0 +1,61 @@
+<template name="search">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Search</h1>
+
+                {{> searchTpl}}
+
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+</template>
+
+<template name="searchTpl">
+    <div class="search-input">
+        {{> esInput index="users" placeholder="Search..." }}
+    </div>
+
+    {{#ifEsInputIsEmpty index="users"}}
+        <div>Search for users</div>
+        <!--todo: put here-->
+
+    {{/ifEsInputIsEmpty}}
+
+    {{#ifEsIsSearching index="users"}}
+        <div>Loading...</div>
+    {{else}}
+        <div class="results-wrapper">
+            {{#esEach index="users"}}
+                {{> userSearchResult}}
+            {{/esEach}}
+        </div>
+
+        {{> esLoadMoreButton index="users"}}
+    {{/ifEsIsSearching}}
+
+    {{#ifEsHasNoResults index="users"}}
+        <div class="no-results">No results found!</div>
+    {{/ifEsHasNoResults}}
+</template>
+
+<template name="userSearchResult">
+    <div class="media userSearchResult">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src={{this.profile.image}} />
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">Media heading</h4>
+            <p>{{this.profile.displayName}}</p>
+            <p>{{this.profile.bio}}</p>
+        </div>
+    </div>
+
+</template>
+
+

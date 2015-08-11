@@ -1,0 +1,31 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+autopublish
+insecure
+less
+nemo64:bootstrap
+iron:router
+sacha:spin
+accounts-password
+useraccounts:bootstrap
+service-configuration
+accounts-ui
+iron:layout
+mrt:moment
+accounts-facebook
+accounts-github
+accounts-google
+utilities:avatar
+mrt:flash-messages
+jonblum:jquery-cropper
+jquery
+reactive-var
+reactive-dict
+cfs:standard-packages
+cfs:gridfs
+matteodem:easy-search

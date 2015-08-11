@@ -1,0 +1,76 @@
+<template name="profile">
+    {{#Layout template="ProfileLayout"}}
+        {{#with user}}
+            <div class="container">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-3">
+                                    <div class="top-left">
+                                        <img id="profile-img" src={{profileImg}} >
+                                    </div>
+                                </div>
+                                <div class="col-sm-9 profile-header">
+                                    <p>
+
+                                    <h1>{{displayName}}</h1>
+                                    <button type="button" class="btn btn-primary pull-right"
+                                            onClick="location.href='profile/edit'">
+                                        Edit Profile &nbsp;<span class="glyphicon glyphicon-edit"></span>
+                                    </button>
+                                    </p>
+                                    <p>
+                                        <span>Last Online: {{lastOnline}}</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Membership Level: {{membershipLevel}}</span>
+                                    </p>
+
+                                    <div>
+                                        <button class="btn btn-primary">Message</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <fieldset class="well the-fieldset">
+                                        <legend class="the-legend">
+                                            <h3>About Me</h3>
+                                        </legend>
+                                        <span class="badge">Bitcoin</span>
+                                        <span class="badge">Currency Trading</span>
+                                        <span class="badge">Technology</span>
+                                        <span class="badge">Big Data</span>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row vertm-25">
+                        <div class="col-sm-9">
+                            <div class="interests main-sub-section">
+                                <fieldset class="well the-fieldset">
+                                    <legend class="the-legend">
+                                        <h3>Bio:</h3>
+                                    </legend>
+                                    {{bio}}
+                                </fieldset>
+                            </div>
+                            <div class="col-sm-3">
+                                Potential Projects [from on algo search of interests]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/with}}
+    {{/Layout}}
+</template>
+
+<!--<template name="profileHeading">-->
+<!--</template>-->
