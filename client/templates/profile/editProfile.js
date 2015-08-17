@@ -22,7 +22,9 @@ Template.editProfile.helpers({
             profileImg: user.profile.image
         }
     },
-
+    isAddingProject: function () {
+        return true;
+    },
     profileImgTemplName: function () {
         var userIsEditing = Template.instance().state.get('isChangingProfileImg');
         return (userIsEditing) ? 'editProfileImg' : 'promptEditProfileImg';
@@ -51,6 +53,8 @@ Template.editProfile.events({
     },
     'submit form': function(e) {
         e.preventDefault();
+        
+        console.log('submitted heres');
         var getEl = getElByName.bind(this, e);
 
         var user = Meteor.user();
@@ -60,6 +64,8 @@ Template.editProfile.events({
             displayName: getEl("displayName"),
             bio: getEl("bio")
         };
+
+        console.log('profileInfo', profileInfo);
 
         _.extend(profile, profileInfo);
 

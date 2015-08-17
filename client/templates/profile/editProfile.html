@@ -43,32 +43,17 @@
         {{#with user}}
             <div class="col-sm-12">
                 <div class="row">
-                    <div class="col-sm-9">
+                    <div class="col-sm-12">
                         <div class="row">
                             <div class="col-xs-12 col-sm-3">
                                 <div class="top-left">
                                     <img src={{profileImg}} class="profile-img">
                                 </div>
                             </div>
-                            <div class="col-sm-9 profile-header">
+                            <div class="col-xs-12 col-sm-9 profile-header">
 
                                 {{> Template.dynamic template=profileImgTemplName }}
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <fieldset class="well the-fieldset">
-                                    <legend class="the-legend">
-                                        <h3>My Interests</h3>
-                                    </legend>
-                                    <span class="badge">Bitcoin</span>
-                                    <span class="badge">Currency Trading</span>
-                                    <span class="badge">Technology</span>
-                                    <span class="badge">Big Data</span>
-                                </fieldset>
                             </div>
                         </div>
                     </div>
@@ -78,7 +63,6 @@
                         <form class="form-horizontal">
                             <div class="form-group">
                                 <label for="inputDisplayName" class="col-sm-2 control-label">Display Name</label>
-
                                 <div class="col-sm-10">
                                     <input
                                             name="displayName"
@@ -86,15 +70,15 @@
                                             class="form-control"
                                             id="inputDisplayName"
                                             placeholder="First Last"
-                                            value={{displayName}}/>
+                                            value={{displayName}} >
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="myInterests" class="col-sm-2 control-label">My Interests</label>
+                                <label for="bio" class="col-sm-2 control-label">My Interests</label>
 
                                 <div class="col-sm-10">
                                 <textarea
-                                        name="myInterests"
+                                        name="bio"
                                         class="form-control"
                                         rows="3"
                                         id="bio"
@@ -104,16 +88,55 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button name="submit" type="submit" class="btn btn-default">Submit</button>
+                                    <button name="submit" class="btn btn-default">Submit Profile Update</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                    <div class="col-sm-3">
-                        Potential Projects [from on algo search of interests]
+                        <br/>
+                        {{#if isAddingProject}}
+                            {{> addProject}}
+                        {{else}}
+                            <button type="button" class="btn btn-primary">
+                                Add Project
+                            </button>
+                        {{/if}}
+
                     </div>
                 </div>
             </div>
         {{/with}}
     {{/Layout}}
 </template>
+
+
+<!--<template name="addProject">-->
+    <!--<h4>Add Project</h4>-->
+    <!--<form class="form-horizontal">-->
+        <!--<div class="form-group">-->
+            <!--<label class="col-sm-2 control-label">Project Title</label>-->
+            <!--<div class="col-sm-10">-->
+                <!--<input-->
+                        <!--name="projectTitle"-->
+                        <!--type="text"-->
+                        <!--class="form-control"-->
+                        <!--id="project-title" >-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="col-sm-2 control-label">Project Description</label>-->
+            <!--<div class="col-sm-10">-->
+                <!--<textarea-->
+                    <!--name="bio"-->
+                    <!--class="form-control"-->
+                    <!--rows="3"-->
+                    <!--id="bio"-->
+                    <!--></textarea>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                <!--<button name="submitProject" class="btn btn-default">Submit New Project</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</form>-->
+<!--</template>-->

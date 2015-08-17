@@ -3,6 +3,10 @@ Meteor.publish("images", function(){
 });
 
 
+Meteor.publish('projects', function() {
+    return Projects.find();
+});
+
 
 //function running() {
 //    var idx = 0;

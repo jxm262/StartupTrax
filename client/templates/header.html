@@ -26,8 +26,11 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile <b class="caret"></b></a>
                             <ul class="dropdown-menu">
+
                                 <li>
-                                    <a href="{{pathFor 'profile'}}">My Profile</a>
+                                {{#with currentUser}}
+                                    <a href="{{pathFor 'profile' _name=this.profile.displayName }}">My Profile</a>
+                                {{/with}}
                                 </li>
                                 <li>
                                     <a href="{{pathFor 'messages'}}">My Messages</a>
