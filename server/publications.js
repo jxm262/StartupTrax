@@ -7,6 +7,10 @@ Meteor.publish('projects', function() {
     return Projects.find();
 });
 
+Meteor.publish('singleProject', function(id) {
+    //check(id, String);
+    return Projects.find(id);
+});
 
 //function running() {
 //    var idx = 0;

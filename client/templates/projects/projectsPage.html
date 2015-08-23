@@ -1,0 +1,15 @@
+<template name="projectsPage">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Projects</h2>
+                <hr/>
+            </div>
+        </div>
+        <div class="row">
+            {{#each projects}}
+                {{> projectItem}}
+            {{/each}}
+        </div>
+    </div>
+</template>

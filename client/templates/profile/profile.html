@@ -2,14 +2,13 @@
     {{#Layout template="ProfileLayout"}}
             <div class="container">
                 <div class="row">
+                    <div class="pull-right">
+                        <button id="edit-profile-btn" type="button" class="btn btn-primary pull-right" >
+                            Edit Profile &nbsp;<span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </div>
                     <div class="col-sm-12">
                         {{> userMain user}}
-                        <div class="pull-right">
-                            <button type="button" class="btn btn-primary pull-right"
-                                    onClick="location.href='profile/edit'">
-                                Edit Profile &nbsp;<span class="glyphicon glyphicon-edit"></span>
-                            </button>
-                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -40,7 +39,8 @@
             <div class="panel-body">
                 {{#each this}}
                     <h4>{{title}}</h4>
-                    <h5>anchross <a href="{{url}}">{{url}}</a></h5>
+                    <a href="{{pathFor 'project' _project=this._id}}">{{title}}</a>
+                    <h5>Url:  <a href="{{url}}">{{url}}</a></h5>
                     <p class="text-left">
                         {{description}}
                     </p>

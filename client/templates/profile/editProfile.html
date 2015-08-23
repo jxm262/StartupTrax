@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="bio" class="col-sm-2 control-label">My Interests</label>
+                                <label for="bio" class="col-sm-2 control-label">About Me</label>
 
                                 <div class="col-sm-10">
                                 <textarea
@@ -93,50 +93,9 @@
                             </div>
                         </form>
                         <br/>
-                        {{#if isAddingProject}}
-                            {{> addProject}}
-                        {{else}}
-                            <button type="button" class="btn btn-primary">
-                                Add Project
-                            </button>
-                        {{/if}}
-
                     </div>
                 </div>
             </div>
         {{/with}}
     {{/Layout}}
 </template>
-
-
-<!--<template name="addProject">-->
-    <!--<h4>Add Project</h4>-->
-    <!--<form class="form-horizontal">-->
-        <!--<div class="form-group">-->
-            <!--<label class="col-sm-2 control-label">Project Title</label>-->
-            <!--<div class="col-sm-10">-->
-                <!--<input-->
-                        <!--name="projectTitle"-->
-                        <!--type="text"-->
-                        <!--class="form-control"-->
-                        <!--id="project-title" >-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="form-group">-->
-            <!--<label class="col-sm-2 control-label">Project Description</label>-->
-            <!--<div class="col-sm-10">-->
-                <!--<textarea-->
-                    <!--name="bio"-->
-                    <!--class="form-control"-->
-                    <!--rows="3"-->
-                    <!--id="bio"-->
-                    <!--></textarea>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="form-group">-->
-            <!--<div class="col-sm-offset-2 col-sm-10">-->
-                <!--<button name="submitProject" class="btn btn-default">Submit New Project</button>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</form>-->
-<!--</template>-->

@@ -53,12 +53,13 @@ Template.editProfile.events({
     },
     'submit form': function(e) {
         e.preventDefault();
-        
+
         console.log('submitted heres');
         var getEl = getElByName.bind(this, e);
 
         var user = Meteor.user();
         var profile = user.profile || {};
+        var oldDisplayName = _.extend({}, profile).displayName;
 
         var profileInfo = {
             displayName: getEl("displayName"),
@@ -69,6 +70,8 @@ Template.editProfile.events({
 
         _.extend(profile, profileInfo);
 
+        console.log('profileInfo');
+
         Meteor.users.update(
             { _id: Meteor.userId()},
             { $set: {profile: profile}},
@@ -77,10 +80,12 @@ Template.editProfile.events({
                     console.log('there was an error submitting editProfile data');
                     console.log(err);
                 } else {
-                    Router.go('profile');
+                    Router.go('profile', {_name: profileInfo.displayName});
                 }
             }
         );
+
+        //Meteor.call('updateProjectOwner', {old: ol);
     },
     image: function() {
         return Session.get("image") || "http://placehold.it/50";

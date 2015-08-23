@@ -1,24 +1,5 @@
-//Profile Template State
-//Template.profile.created = function () {
-//    this.state = new ReactiveDict();
-//    this.state.set('isAddingProject', false);
-//};
-
 Template.profile.helpers({
-    user: function () {
-        var user = Meteor.user() || {};
-        user.profile = user.profile || {};
 
-        return {
-            displayName: user.profile.displayName,
-            lastOnline: function () {
-                var today = Date.now();
-                return moment(today).format('MM-DD-YYYY');
-            },
-            bio: user.profile.bio,
-            profileImg: user.profile.image || 'http://placehold.it/100'
-        }
-    }
 });
 
 Template.projectList.helpers({
@@ -54,6 +35,10 @@ Template.profile.events({
         console.log('clicked..');
         Session.set('isAddingProject', true);
         //Template.instance().state.set('isAddingProject', true);
+    },
+    'click #edit-profile-btn': function () {
+        //console.log('clicked this', Router.current().url + '/edit');
+        Router.go('profile.edit', {_name: this.name});
     }
 });
 
