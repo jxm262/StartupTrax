@@ -28,3 +28,5 @@ reactive-dict
 cfs:standard-packages
 cfs:gridfs
 matteodem:easy-search
+sanjo:jasmine
+velocity:html-reporter

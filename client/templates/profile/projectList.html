@@ -1,0 +1,34 @@
+<template name="projectList">
+    <div class="vertm-25">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="pull-right">
+                    <button
+                            type="button"
+                            class="btn btn-sm btn-primary pull-right"
+                            id="add-project-btn" >
+                        Add Project &nbsp;<span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>
+                <h4>Projects</h4>
+            </div>
+            <div class="panel-body">
+                {{#each this}}
+                    <h4>{{title}}</h4>
+                    <a href="{{pathFor 'project' _project=this._id}}">{{title}}</a>
+                    <h5>Url:  <a href="{{url}}">{{url}}</a></h5>
+                    <p class="text-left">
+                        {{description}}
+                    </p>
+                    <hr/>
+                {{/each}}
+
+                {{#if isAddingProject}}
+                    <hr/>
+                    {{> addProject}}
+                {{/if}}
+
+            </div>
+        </div>
+    </div>
+</template>

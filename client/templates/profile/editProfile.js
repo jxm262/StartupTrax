@@ -51,6 +51,7 @@ Template.editProfile.events({
     'click #change-profile-pic': function () {
         Template.instance().state.set('isChangingProfileImg', true);
     },
+    //TODO change to click event instead of form submission
     'submit form': function(e) {
         e.preventDefault();
 
@@ -65,6 +66,7 @@ Template.editProfile.events({
             displayName: getEl("displayName"),
             bio: getEl("bio")
         };
+debugger;
 
         console.log('profileInfo', profileInfo);
 
@@ -84,8 +86,6 @@ Template.editProfile.events({
                 }
             }
         );
-
-        //Meteor.call('updateProjectOwner', {old: ol);
     },
     image: function() {
         return Session.get("image") || "http://placehold.it/50";
