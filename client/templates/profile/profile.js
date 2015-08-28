@@ -4,12 +4,7 @@ Template.profile.helpers({
 
 Template.projectList.helpers({
     isAddingProject: function () {
-        var m = Session.get('isAddingProject');
-            console.log('calling isAddingProject', Session.get('isAddingProject'));
-            console.log('m', m);
-        return m;
-        //console.log('....', Template.instance().state.get('isAddingProject'));
-        //return Template.instance().state.get('isAddingProject');
+        return Session.get('isAddingProject');
     }
 });
 
@@ -26,6 +21,9 @@ Template.addProject.events({
         };
 
         Meteor.call("addProject", project);
+
+        //TODO error handling
+        Session.set('isAddingProject', false);
     }
 });
 
@@ -33,7 +31,6 @@ Template.addProject.events({
 Template.profile.events({
     'click #add-project-btn': function () {
         Session.set('isAddingProject', true);
-        //Template.instance().state.set('isAddingProject', true);
     },
     'click #edit-profile-btn': function () {
         Router.go('profile.edit', {_name: this.name});
