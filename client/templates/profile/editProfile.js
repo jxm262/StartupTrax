@@ -13,13 +13,13 @@ Template.editProfile.helpers({
         console.log('user retrieved', user);
 
         return {
-            displayName: user.profile.displayName,
+            displayName: user.profile.displayName || '',
             lastOnline: function () {
                 var today = Date.now();
                 return moment(today).format('MM-DD-YYYY');
             },
-            bio: user.profile.bio,
-            profileImg: user.profile.image
+            bio: user.profile.bio || '',
+            profileImg: user.profile.image || null
         }
     },
     isAddingProject: function () {
