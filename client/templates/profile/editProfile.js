@@ -66,13 +66,8 @@ Template.editProfile.events({
             displayName: getEl("displayName"),
             bio: getEl("bio")
         };
-debugger;
-
-        console.log('profileInfo', profileInfo);
 
         _.extend(profile, profileInfo);
-
-        console.log('profileInfo');
 
         Meteor.users.update(
             { _id: Meteor.userId()},
