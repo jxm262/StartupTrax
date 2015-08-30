@@ -1,0 +1,10 @@
+<template name="userMain">
+    <div class="entrepreneur-item">
+        {{#with profile}}
+            <br/>
+            <img src={{profileImg}} class="img-circle"/>
+            <h2 class="media-heading">{{displayName}}</h2>
+            <p><span>{{bio}}</span></p>
+        {{/with}}
+    </div>
+</template>
