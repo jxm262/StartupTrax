@@ -6,20 +6,20 @@ Template.editProfile.created = function () {
 
 Template.editProfile.helpers({
     user: function () {
-        var user = Meteor.user() || {};
-        user.profile = user.profile || {};
-
+      console.log('this', this);
+    },
+    user: function () {
         //TODO: why is this popping twice?
-        console.log('user retrieved', user);
+        console.log('user retrieved', this.user);
 
         return {
-            displayName: user.profile.displayName || '',
+            displayName: this.user.profile.displayName || '',
             lastOnline: function () {
                 var today = Date.now();
                 return moment(today).format('MM-DD-YYYY');
             },
-            bio: user.profile.bio || '',
-            profileImg: user.profile.image || null
+            bio: this.user.profile.bio || '',
+            profileImg: this.user.profile.image || null
         }
     },
     isAddingProject: function () {

@@ -1,0 +1,32 @@
+<template name="editProfileImg">
+    <div class="col-sm-12">
+        <div class="row">
+
+            <h3>Upload Your Profile Picture</h3>
+
+            <p>
+                <input type="file" id="inputImage" placeholder="adsf">
+                <button class="btn btn-primary openmodal">Upload Image</button>
+            </p>
+            <div class="modal" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="imageModalLabel">Crop it</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="bootstrap-modal-cropper">
+                                <img src="{{imgtocropp}}" class="img-responsive imgtocropp">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
