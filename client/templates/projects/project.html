@@ -1,8 +1,16 @@
 <template name="project">
-    <a href="{{pathFor 'project' _id=_id}}">Link</a>
-    <p>Owner: {{owner}}</p>
-    <p>Title: {{title}}</p>
-    <p>Url: {{url}}</p>
-    <p>Description: {{description}}</p>
+    <div class="project-item">
+        <!--<a href="{{pathFor 'project' _id=_id}}">-->
+            <!--<img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">-->
+        <!--</a>-->
+        <h3>
+            <a href="{{pathFor 'project' _id=_id}}">{{title}}</a>
+        </h3>
+        <!--<p>{{owner}}</p>-->
+        <p>{{description}}</p>
+    </div>
 </template>
 
+<!--<div class="col-md-4">-->
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida-->
+        <!--pellentesque urna varius vitae.</p>-->
