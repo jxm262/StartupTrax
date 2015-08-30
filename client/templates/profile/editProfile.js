@@ -22,7 +22,7 @@ Template.editProfile.helpers({
             profileImg: this.user.profile.image || null
         }
     },
-    isAddingProject: function () {
+    isUpsertingProject: function () {
         return true;
     },
     profileImgTemplName: function () {
