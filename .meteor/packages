@@ -29,3 +29,4 @@ matteodem:easy-search
 sanjo:jasmine
 velocity:html-reporter
 useraccounts:bootstrap
+useraccounts:iron-routing
