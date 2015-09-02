@@ -69,18 +69,14 @@ Template.editProfile.events({
 
         _.extend(profile, profileInfo);
 
-        Meteor.users.update(
-            { _id: Meteor.userId()},
-            { $set: {profile: profile}},
-            function (err) {
-                if(err) {
-                    console.log('there was an error submitting editProfile data');
-                    console.log(err);
-                } else {
-                    Router.go('profile', {_name: profileInfo.displayName});
-                }
+        Meteor.call("updateProfile", profile, function (err) {
+            if(err) {
+                console.log('there was an error submitting editProfile data');
+                console.log(err);
+            } else {
+                Router.go('profile', {_name: profileInfo.displayName});
             }
-        );
+        });
     },
     image: function() {
         return Session.get("image") || "http://placehold.it/50";
