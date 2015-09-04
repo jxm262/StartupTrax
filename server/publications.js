@@ -1,6 +1,11 @@
-Meteor.publish("images", function(){
+Meteor.publish('images', function(){
     return Images.find();
 });
+
+//TODO - restrict to publish only subset of user data (name, etc..)
+//Meteor.publish('entrepreneurs', function () {
+//   return Meteor.users().find({}, {fields: {emails: 1, profile: 1}});
+//});
 
 
 Meteor.publish('projects', function() {
